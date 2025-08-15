@@ -1,8 +1,12 @@
-import React from "react";
+const Card = ({ children, className = "", padding = true, hover = false }) => {
+  const baseClasses = "bg-white border border-gray-200 rounded-lg shadow-sm";
+  const paddingClasses = padding ? "p-6" : "";
+  const hoverClasses = hover ? "hover:shadow-md transition-shadow" : "";
 
-const Card = ({ children, className }) => {
   return (
-    <div className={`bg-white shadow-md rounded-lg p-4 ${className}`}>
+    <div
+      className={`${baseClasses} ${paddingClasses} ${hoverClasses} ${className}`}
+    >
       {children}
     </div>
   );
